@@ -2,15 +2,20 @@
 * server.js
 * In this example we see how to create a simple server.
 */
-var http = require('http');
+var express = require('express');
+var app = express();
 var port = 3000;
 
-var requestHandler = function(request, response) {
-  console.log(request.url);
-  response.end('Hello World!');
-  response.end(request.url);
-}
+// Handling GET requests
+app.get('/hello', function(req, res){ 
+    res.send('Hello World!'); 
+    res.send(request.url);
+  });
+  
+app.use('/hello', express.static('cartella'));
+  
+app.listen(port, function() {
+console.log('Server running on port ', port);
+});
 
-var server = http.createServer(requestHandler);
-server.listen(port);
 console.log("Server started, listening on port", port);
