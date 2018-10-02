@@ -8,6 +8,7 @@ var port = 3000;
 var requestHandler = function(request, response) {
   console.log(request.url);
   response.end('Hello World!');
+  response.end(request.url);
 }
 
 var server = http.createServer(requestHandler);
