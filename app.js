@@ -3,7 +3,7 @@
 * In this example we see how to create a simple server.
 */
 var http = require('http');
-var port = 8080;
+var port = 8081;
 
 var requestHandler = function(request, response) {
   console.log(request.url);
